@@ -21,6 +21,11 @@ Screenshots of the result:
   <img src="Screenshots/Squares.PNG" width="350" title="Squares">  
 </p>
 
+## Koch Curve
+<p align="left">
+  <img src="Screenshots/Koch_curve.PNG" width="350" title="Koch Curve">  
+</p>
+
 ## Stars
 <p align="left">
   <img src="Screenshots/Stars.PNG" width="350" title="Stars">  
