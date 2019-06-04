@@ -112,8 +112,8 @@ void main()
 
 	initwindow(1000, 1000, "Graphics");
 	//cantor(900, 50, 50);
-	//circles(300, 300, 200);
-	sierpinski(700, 50, 50);
+	//circles(300, 300, 250);
+	//sierpinski(700, 50, 50);
 #if 0
 	cantor(0, 10, 900, 100);
 #endif
