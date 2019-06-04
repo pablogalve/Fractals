@@ -52,11 +52,11 @@ vec2 normalize(const vec2 &v) { return v / length(v); }
 // Sierpinski fractal //////////////////////////////////////////////////////////
 
 
-void triangle(const vec2 &a, const vec2 &b, const vec2 &c)
+void triangle(float x, float y, float side)
 {
-	line(a.x, a.y, b.x, b.y);
-	line(b.x, b.y, c.x, c.y);
-	line(c.x, c.y, a.x, a.y);
+	line(x, y, x + side, y);
+	line(x, y, x + side / 2, y + side);
+	line(x + side, y, x + side / 2, y + side);
 }
 
 //
@@ -71,9 +71,9 @@ void triangle(const vec2 &a, const vec2 &b, const vec2 &c)
 //          o----o----o
 //  bottomLeft   c   bottomRight
 //
-void sierpinski(int depth, const vec2 &bottomLeft, const vec2 &bottomRight, const vec2 &top)
+void sierpinski(float x, float y, float side)
 {
-	// TODO
+	
 }
 
 
@@ -87,7 +87,7 @@ void tree(int depth, const vec2 &a, const vec2 &b)
 
 // Spiky triangle //////////////////////////////////////////////////////////////
 
-void spiky_triangle(int depth, const vec2 &a, const vec2 &b, const vec2 &c)
+void spiky_triangle(float x, float y, float side)
 {
 	// TODO
 }
