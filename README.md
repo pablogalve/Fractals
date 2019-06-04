@@ -6,17 +6,17 @@ Screenshots of the result:
 
 
 
-Sierpinski's triangle
+## Sierpinski's triangle
 <p align="center">
   <img src="Screenshots/Sierpinski_triangle.PNG" width="350" title="Sierpinski's triangle">  
 </p>
 
-Circles
+## Circles
 <p align="center">
   <img src="Screenshots/Circles.PNG" width="350" title="Circles">  
 </p>
 
-Cantor
+## Cantor
 <p align="center">
   <img src="Screenshots/Cantor.PNG" width="350" title="Cantor">  
 </p>
