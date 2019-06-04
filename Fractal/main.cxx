@@ -4,22 +4,28 @@
 
 // Cantor set //////////////////////////////////////////////////////////////////
 
-void cantor(float x, float y, float depth)
+void cantor(float depth, float x, float y)
 {
 	line(x, y, x + depth, y);
 	if (depth >= 10) {
 		y += 20;
-		cantor(x, y, depth / 3.0);
-		cantor(x + 2.0 * depth / 3.0, y, depth / 3.0);
+		cantor(depth / 3.0, x, y);
+		cantor(depth / 3.0,x + 2.0 * depth / 3.0, y);
 	}
 }
 
 
 // Circles /////////////////////////////////////////////////////////////////////
 
-void circles(int depth, float x, float y, float radius)
+void circles(float x, float y, float radius)
 {
-	// TODO
+	circle(x, y, radius);
+	if (radius >= 5) {
+		circles(x+radius*0.6, y, radius*0.4);
+		circles(x-radius*0.6, y, radius*0.4);
+		circles(x, y + radius * 0.6, radius*0.4);
+		circles(x, y - radius * 0.6, radius*0.4);
+	}
 }
 
 
@@ -100,7 +106,8 @@ void main()
 	*/
 
 	initwindow(1000, 1000, "Graphics");
-	cantor(50, 50, 900);
+	//cantor(900, 50, 50);
+	circles(300, 300, 200);
 #if 0
 	cantor(0, 10, 900, 100);
 #endif
