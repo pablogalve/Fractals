@@ -92,7 +92,9 @@ void tree(float depth, float x1, float x2, float y1, float y2)
 		tree(depth *0.6, x1, x2, y1, y2);
 	}
 }
+void vectorTree(float depth, const vec2 &a, const vec2 &b) {
 
+}
 
 // Spiky triangle //////////////////////////////////////////////////////////////
 
@@ -101,6 +103,16 @@ void spiky_triangle(float x, float y, float side)
 	// TODO
 }
 
+void square(float x, float y, float side) {
+	line(x, y, x + side, y);
+	line(x, y, x, y + side);
+	line(x + side, y, x + side, y + side);
+	line(x, y + side, x + side, y + side);
+}
+
+void Squares(float x, float y, float side) {
+
+}
 
 // Main function ///////////////////////////////////////////////////////////////
 
