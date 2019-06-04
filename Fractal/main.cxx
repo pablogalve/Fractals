@@ -142,6 +142,35 @@ void Squares(float x, float y, float side) {
 	}
 }
 
+void Koch(float xi, float yi, float xf, float yf, int iter) {
+	float x1, y1, x2, y2, x3, y3, x4, y4, x5, y5;
+	float k = 1 / sqrt(3); //Trigonometric factor to calculate third point
+
+	x1 = xi;
+	y1 = yi;
+	x2 = 0.66666667*xi + 0.33333333*xf;
+	y2 = 0.66666667*yi + 0.33333333*yf;
+	x3 = 0.5*(xi + xf) - 0.5*k*(yf - yi);
+	y3 = 0.5*(yi + yf) + 0.5*k*(xf - xi);
+	x4 = 0.33333333*xi + 0.66666667*xf;
+	y4 = 0.33333333*yi + 0.66666667*yf;
+	x5 = xf;
+	y5 = yf;
+
+	if (iter > 0) {
+		iter--;
+		Koch(x1, y1, x2, y2, iter);
+		Koch(x2, y2, x3, y3, iter);
+		Koch(x3, y3, x4, y4, iter);
+		Koch(x4, y4, x5, y5, iter);
+	}
+	else {
+		line(x1, y1, x2, y2);
+		line(x2, y2, x3, y3);
+		line(x3, y3, x4, y4);
+		line(x4, y4, x5, y5);
+	}
+}
 // Main function ///////////////////////////////////////////////////////////////
 
 void main()
@@ -160,7 +189,10 @@ void main()
 	//sierpinski(700, 50, 50);
 	//tree(500, 500, 500, 500, 700);
 	//Squares(50, 50, 600);
-	Stars(300,300, 300);
+	//Stars(300,300, 300);
+	Koch(250, 100, 100, 400, 6);
+	Koch(100, 400, 400, 400, 6);
+	Koch(400, 400, 250, 100, 6);
 
 	system("pause");
 }
