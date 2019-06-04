@@ -1,7 +1,6 @@
 # Fractals
 
 I've coded this figures using recursivity and fractals in c++
-
 Screenshots of the result:
 
 Sierpinski's triangle
