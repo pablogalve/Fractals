@@ -111,7 +111,15 @@ void square(float x, float y, float side) {
 }
 
 void Squares(float x, float y, float side) {
-
+	square(x, y, side);
+	if (side >= 10) {
+		float border = side *0.05;
+		side = (side -3 * border) / 2; //To calculate the side of next square, we take 3 borders and divide by 2 because we'll have 2 smaller squares at that position
+		Squares(x + border, y + border, side);
+		Squares(x + side + (2 * border), y + border, side);
+		Squares(x + border, y+(2*border)+side, side);		
+		Squares(x + side + (2 * border), y + (2 * border) + side, side);
+	}
 }
 
 // Main function ///////////////////////////////////////////////////////////////
@@ -130,35 +138,8 @@ void main()
 	//cantor(900, 50, 50);
 	//circles(300, 300, 250);
 	//sierpinski(700, 50, 50);
-	tree(500, 500, 500, 500, 700);
-#if 0
-	cantor(0, 10, 900, 100);
-#endif
-
-#if 0
-	circles(0, 500, 500, 400);
-#endif
-
-#if 0
-	const vec2 bottomLeft(100, 1000 - 100);
-	const vec2 bottomRight(900, 1000 - 100);
-	const vec2 top(500, 1000 - 770);
-	triangle(bottomLeft, bottomRight, top);
-	sierpinski(0, bottomLeft, bottomRight, top);
-#endif
-
-#if 0
-	const vec2 a(500, 900);
-	const vec2 b(500, 500);
-	tree(0, a, b);
-#endif
-
-#if 0
-	const vec2 a(100, 1000 - 260);
-	const vec2 b(900, 1000 - 260);
-	const vec2 c(500, 1000 - 940);
-	spiky_triangle(0, a, b, c);
-#endif
+	//tree(500, 500, 500, 500, 700);
+	Squares(50, 50, 600);
 
 	system("pause");
 }
