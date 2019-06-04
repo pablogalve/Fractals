@@ -21,6 +21,11 @@ Screenshots of the result:
   <img src="Screenshots/Squares.PNG" width="350" title="Squares">  
 </p>
 
+## Stars
+<p align="left">
+  <img src="Screenshots/Stars.PNG" width="350" title="Stars">  
+</p>
+
 ## Cantor
 <p align="left">
   <img src="Screenshots/Cantor.PNG" width="350" title="Cantor">  
