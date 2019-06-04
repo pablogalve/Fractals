@@ -71,9 +71,14 @@ void triangle(float x, float y, float side)
 //          o----o----o
 //  bottomLeft   c   bottomRight
 //
-void sierpinski(float x, float y, float side)
+void sierpinski(float side, float x, float y)
 {
-	
+	triangle(x, y, side);
+	if (side >= 10) {
+		sierpinski(side*0.5, x, y);
+		sierpinski(side*0.5, x+side/2, y);
+		sierpinski(side*0.5, x+side/4, y+side/2);
+	}
 }
 
 
@@ -107,7 +112,8 @@ void main()
 
 	initwindow(1000, 1000, "Graphics");
 	//cantor(900, 50, 50);
-	circles(300, 300, 200);
+	//circles(300, 300, 200);
+	sierpinski(700, 50, 50);
 #if 0
 	cantor(0, 10, 900, 100);
 #endif
