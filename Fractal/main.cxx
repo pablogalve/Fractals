@@ -93,7 +93,27 @@ void tree(float depth, float x1, float x2, float y1, float y2)
 	}
 }
 void vectorTree(float depth, const vec2 &a, const vec2 &b) {
-
+	
+}
+void star(float x, float y, float side) {
+	float tram = side * 0.8 / 2.0;
+	line(x - tram, y, x + tram, y); // horitzontal
+	line(x, y - tram, x, y + tram); //vertical
+	line(x - tram, y - tram, x + tram, y + tram); // diagonal 1
+	line(x + tram, y - tram, x - tram, y + tram); // diagonal 2
+}
+void Stars(float x, float y, float side) {
+	star(x, y, side);
+	if (side > 2) {
+		Stars(x - side * 0.8, y, side*0.15);
+		Stars(x + side * 0.8, y, side*0.15);
+		Stars(x, y - side * 0.8, side*0.15);
+		Stars(x, y + side * 0.8, side*0.15);
+		Stars(x - side * 0.8, y - side * 0.8, side*0.15);
+		Stars(x + side * 0.8, y + side * 0.8, side*0.15);
+		Stars(x + side * 0.8, y - side * 0.8, side*0.15);
+		Stars(x - side * 0.8, y + side * 0.8, side*0.15);
+	}
 }
 
 // Spiky triangle //////////////////////////////////////////////////////////////
@@ -139,7 +159,8 @@ void main()
 	//circles(300, 300, 250);
 	//sierpinski(700, 50, 50);
 	//tree(500, 500, 500, 500, 700);
-	Squares(50, 50, 600);
+	//Squares(50, 50, 600);
+	Stars(300,300, 300);
 
 	system("pause");
 }
