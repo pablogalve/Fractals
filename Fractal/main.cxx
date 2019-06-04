@@ -4,9 +4,14 @@
 
 // Cantor set //////////////////////////////////////////////////////////////////
 
-void cantor(int depth, float x1, float x2, float y)
+void cantor(float x, float y, float depth)
 {
-	// TODO
+	line(x, y, x + depth, y);
+	if (depth >= 10) {
+		y += 20;
+		cantor(x, y, depth / 3.0);
+		cantor(x + 2.0 * depth / 3.0, y, depth / 3.0);
+	}
 }
 
 
@@ -95,7 +100,7 @@ void main()
 	*/
 
 	initwindow(1000, 1000, "Graphics");
-
+	cantor(50, 50, 900);
 #if 0
 	cantor(0, 10, 900, 100);
 #endif
