@@ -16,6 +16,11 @@ Screenshots of the result:
   <img src="Screenshots/Circles.PNG" width="350" title="Circles">  
 </p>
 
+## Squares
+<p align="left">
+  <img src="Screenshots/Squares.PNG" width="350" title="Squares">  
+</p>
+
 ## Cantor
 <p align="left">
   <img src="Screenshots/Cantor.PNG" width="350" title="Cantor">  
