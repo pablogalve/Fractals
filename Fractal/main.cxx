@@ -84,9 +84,13 @@ void sierpinski(float side, float x, float y)
 
 // Tree fractal ////////////////////////////////////////////////////////////////
 
-void tree(int depth, const vec2 &a, const vec2 &b)
+void tree(float depth, float x1, float x2, float y1, float y2)
 {
-	// TODO
+	line(x1, y1, x2, y2);
+	if (depth >= 10) {
+		tree(depth *0.6, x1*cos(45), x1, y1*cos(45), y2);
+		tree(depth *0.6, x1, x2, y1, y2);
+	}
 }
 
 
@@ -114,6 +118,7 @@ void main()
 	//cantor(900, 50, 50);
 	//circles(300, 300, 250);
 	//sierpinski(700, 50, 50);
+	tree(500, 500, 500, 500, 700);
 #if 0
 	cantor(0, 10, 900, 100);
 #endif
